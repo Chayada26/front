@@ -182,7 +182,7 @@ app.get("/school_province",async (req,res) => {
         const response2 = await axios.get(base_url + '/school');
         const response3 = await axios.get(base_url + '/province');
         res.render("school_province/books",{books1:response.data ,books2:response2.data , books3:response3.data  });
-
+        //dsdsd
 
     } catch (err) {
         console.error(err);
