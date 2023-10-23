@@ -194,8 +194,9 @@ app.get("/school_province",async (req,res) => {
 app.get("/school_province/:id", async(req,res) => {
     try{
         const response = await axios.get(base_url + '/school_province/' + req.params.id);
-        
-        res.render("school_province/book",{book:response.data});
+        const response2 = await axios.get(base_url + '/school');
+        const response3 = await axios.get(base_url + '/province');
+        res.render("school_province/book",{book:response.data  ,book2:response2.data , book3:response3.data});
         
     } catch (err) {
         console.error(err);
